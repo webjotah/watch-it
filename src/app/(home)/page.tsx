@@ -4,9 +4,8 @@ import { usePopularMovies } from '@/hooks/popular-movies.hook';
 import { Movie } from '@/types/movie';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { TvMinimalPlay, Search } from 'lucide-react';
+import { TvMinimalPlay, Search, Popcorn, Film } from 'lucide-react';
 import Link from 'next/link';
-import LineHero from '@/assets/line-hero.svg';
 import '@/app/globals.css';
 
 export default function Home() {
@@ -55,9 +54,19 @@ export default function Home() {
         </header>
 
         <section className="flex h-[90vh] items-center gap-5">
+          {/* divs que preenchem o fundo */}
+          <Popcorn
+            className="absolute top-1/4 left-1/3 svg-bg rotate-12"
+            size={60}
+          />
+          <Film
+            className="absolute bottom-[15%] left-28 svg-bg-film -rotate-12"
+            size={78}
+          />
           <div className="absolute top-28 left-0 blue-glowing-circle" />
           <div className="absolute bottom-5 left-1/3 blue-glowing-circle" />
           <div className="absolute top-1/2 -right-10 blue-glowing-circle" />
+          {/* -- */}
           <div className="flex flex-col gap-8">
             <h1 className="text-5xl font-semibold flex flex-col">
               ENCONTRE SEUS
@@ -68,7 +77,7 @@ export default function Home() {
             <p className="text-xl font-normal w-2/3">
               {' '}
               Explore uma vasta coleção de filmes populares e descubra novos
-              favoritos. Encontre filmes por gênero e fique por dentro dos
+              favoritos! Encontre filmes por gênero e fique por dentro dos
               lançamentos mais recentes.
             </p>
           </div>
@@ -85,6 +94,7 @@ export default function Home() {
                       alt={movie.title}
                       width={350}
                       height={550}
+                      draggable={false}
                     />
                   </div>
                 ) : (
@@ -97,6 +107,7 @@ export default function Home() {
                       alt={movie.title}
                       width={350}
                       height={550}
+                      draggable={false}
                     />
                   </div>
                 )

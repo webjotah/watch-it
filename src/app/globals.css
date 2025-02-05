@@ -19,6 +19,16 @@ body {
   opacity: 0.3;
 }
 
+.svg-bg {
+  color: #006df1;
+  filter: blur(3px);
+}
+
+.svg-bg-film {
+  color: #006df1;
+  filter: blur(4px);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
